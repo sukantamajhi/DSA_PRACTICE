@@ -1,12 +1,61 @@
-print("Before change")
-list = [1,2,3]
-# print(list[0])
+# Bressenham's circle drawing algorithm
 
-for i in list:
-    print(i)
+import matplotlib.pyplot as plt
 
-print("After change")
-list[0] = 7
+def bres_circle(x0,y0,r):
+    x = 0
+    y = r
+    
+    x_plt = []
+    y_plt = []
 
-for i in list:
-    print(i)
+    print(x,y)
+
+
+    d = 3-2*r
+
+    while(x<=y):
+        if (d<0):
+            x+=1
+            d = d+4*x+6
+        else:
+            x+=1
+            y-=1
+            d = d+5*(x-y)+6
+        
+
+        print(x,y)
+        x_plt.append(x+x0)
+        y_plt.append(y+y0)
+        plt.scatter(x_plt,y_plt)
+
+        x_plt.append(y+x0)
+        y_plt.append(x+y0)
+        plt.scatter(x_plt,y_plt)
+
+        x_plt.append(-y+x0)
+        y_plt.append(x+y0)
+        plt.scatter(x_plt,y_plt)
+
+        x_plt.append(-x+x0)
+        y_plt.append(y+y0)
+        plt.scatter(x_plt,y_plt)
+        
+        x_plt.append(-x+x0)
+        y_plt.append(-y+y0)
+        plt.scatter(x_plt,y_plt)
+
+        x_plt.append(-y+x0)
+        y_plt.append(-x+y0)
+        plt.scatter(x_plt,y_plt)
+
+        x_plt.append(y+x0)
+        y_plt.append(-x+y0)
+        plt.scatter(x_plt,y_plt)
+
+        x_plt.append(x+x0)
+        y_plt.append(-y+y0)
+        plt.scatter(x_plt,y_plt)
+
+bres_circle(50,50,10)
+plt.show()
