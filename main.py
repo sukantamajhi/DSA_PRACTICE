@@ -1,5 +1,12 @@
+print("Before change")
 list = [1,2,3]
+# print(list[0])
+
 for i in list:
     print(i)
 
-list[1] = 6
+print("After change")
+list[0] = 7
+
+for i in list:
+    print(i)
