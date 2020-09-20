@@ -13,7 +13,7 @@ def bressenham(x1,y1,x2,y2):
     y = y1
 
     print(x,y)
-
+    
     plt.plot(x,y)
 
     if dx>dy:
